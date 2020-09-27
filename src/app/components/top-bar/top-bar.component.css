@@ -1,0 +1,34 @@
+.topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2;
+  padding: 10px;
+  height: 30px;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+h2 span {
+  position: relative;
+  font-size: 10px;
+  top: -10px;
+  left: -7px;
+  border: 1px;
+  border-radius: 50%;
+  color: #1976d2;
+  background-color:#ffffff;
+  padding: 3px
+}
+
+a {
+  border: 0;
+  color: #1976d2;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}

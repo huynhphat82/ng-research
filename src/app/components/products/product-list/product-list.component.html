@@ -1,0 +1,28 @@
+<div class="product-list">
+  <h2>Products</h2>
+
+  <div *ngFor="let product of products; index as id" appSpy>
+    <h3>
+      <a
+        [title]="product.name + ' details'"
+        [routerLink]="[R.PRODUCT_ROOT, id]"
+      >
+        {{ product.name }}
+      </a>
+    </h3>
+    <p [defaultColor]="'yellow'" [myHightlight]="'orange'" appHighlight>
+      Price: {{ Pipe(product.price).currency('VND').get() }}
+    </p>
+    <p>
+      Price: {{ Pipe.pipe(product.price, Rules.currency('EUR')) }}
+    </p>
+    <p>
+      Price: {{ pipe(product.price, Rules.currency('CAD')) }}
+    </p>
+    <p *ngIf="product.description">
+      Desctiption: {{ product.description }}
+    </p>
+    <button (click)="share()">Share</button>
+    <app-product-alert [product]="product" (notify)="onNotify()"></app-product-alert>
+  </div>
+</div>

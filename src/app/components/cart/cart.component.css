@@ -1,0 +1,65 @@
+.cart {
+  background-color: rgb(219, 214, 214);
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shipping a {
+  text-decoration: none;
+  color: #1976d2;
+  cursor: pointer;
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(170, 167, 166);
+}
+
+.amount .row {
+  /* background-color: gray; */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount .row:not(:last-child) {
+  border-bottom: 1px dashed grey;
+}
+
+.amount span {
+  font-weight: bold;
+}
+
+.amount .total span {
+  font-size: 20px;
+}
+
+.frmPurchase {
+  margin-top: 20px;
+}
+
+.frmPurchase .row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.frmPurchase .row label {
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.frmPurchase .row input {
+  padding: 10px;
+}
+
+.button {
+  border: 0;
+  color: #ffffff;
+  background-color: #1976d2;
+  padding: 10px;
+}
+

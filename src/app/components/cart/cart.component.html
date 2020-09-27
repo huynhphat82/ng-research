@@ -1,0 +1,37 @@
+<h3>My Cart</h3>
+
+<p class="shipping">
+  <a [routerLink]="['/'+R.SHIPPING_LIST]">Choose Shipping Fee</a>
+</p>
+
+<div class="cart" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<div class="amount" *ngIf="items.length > 0">
+  <div class="row subtotal" *ngIf="subtotal > 0">
+    <span>Subtotal</span>
+    <span>{{ subtotal | currency }}</span>
+  </div>
+  <div class="row fee" *ngIf="shippingFee > 0">
+    <span>Shipping Fee</span>
+    <span>{{ shippingFee | currency }}</span>
+  </div>
+  <div class="row total" *ngIf="total > 0">
+    <span>Total</span>
+    <span>{{ total | currency }}</span>
+  </div>
+</div>
+
+<form class="frmPurchase" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="name row">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" formControlName="name" />
+  </div>
+  <div class="address row">
+    <label for="address">Address</label>
+    <input id="address" name="address" type="text" formControlName="address" />
+  </div>
+  <button class="button" type="submit">Purchase</button>
+</form>
